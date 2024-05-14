@@ -19,32 +19,23 @@
   }
 .icon2{
   width: 25em;
+  margin-left: 0;
 }
-.triangle {
-  --r:30px; /* border radius */
-  margin-left: -200px;
-  height: 400px;
-  aspect-ratio: cos(30deg);
-  --_g:calc(tan(60deg)*var(--r)) right var(--r),#000 98%,#0000 101%;
-  -webkit-mask:
-    conic-gradient(from 240deg at calc(200% - 3*var(--r)/2),#000 60deg,#0000 0)
-     100% 0/calc(100% - 3*var(--r)/2) 100% no-repeat,
-    radial-gradient(var(--r) at calc(2*var(--r)) 50%,#000 98%,#0000 101%),
-    radial-gradient(var(--r) at top    var(--_g)),
-    radial-gradient(var(--r) at bottom var(--_g));
-  clip-path: polygon(0 50%,100% 100%,100% 0);
-  box-shadow: 2px 6px 102px 65px rgba(79,111,161,1);
--webkit-box-shadow: 2px 6px 102px 65px rgba(79,111,161,1);
--moz-box-shadow: 2px 6px 102px 65px rgba(79,111,161,1);
+
+.primo{
+  -webkit-box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
+-moz-box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
+box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
 }
 .cont-triangle{
-  
+  filter: drop-shadow(5px 5px 5px #031633);
   display: flex; /* Dispone i triangoli in fila orizzontale */
   flex-direction: row; 
 }
 .itm1{
   background: linear-gradient(45deg,#95b9f0,#1b51a3);
   transform: rotate(30deg);
+  
 }
 .itm2{
   margin-left: 50px;
@@ -53,19 +44,19 @@
  
 }
 .itm3{
-  margin-left: 50px;
+  margin-left: 250px;
   background: linear-gradient(45deg,#4f6fa1,#3d80e3);
-
+  
   transform: rotate(90deg);
 }
 .itm4{
-  margin-left: 50px;
+  margin-left: 250px;
   background: linear-gradient(45deg,#13233b,#043a87);
 
   transform: rotate(120deg);
 }
 .itm5{
-  margin-left: 50px;
+  margin-left: 250px;
   background: linear-gradient(45deg,#043a87,#4f6fa1);
 
   transform: rotate(150deg);
@@ -90,9 +81,9 @@
     <div class="container-fluid conta">
       <div class="row">
     
-    <div class="card col-md-4" style="margin:15rem; background-color: #031633; color:#fefefe;font-size:20px; border-radius: 20px;">
+    <div class="card col-md-4 primo" style="margin:10rem 15rem; background-color: #031633; color:#fefefe;font-size:26px; border-radius: 20px;">
       <div class="card-body" style="padding:2rem">
-        <h5 class="card-title">Ciao! Sono Giuseppe Totire</h5>
+        <h3 class="card-title">Ciao! Sono Giuseppe Totire</h3>
         <h6 class="card-subtitle mb-2 text-muted">Capolavoro</h6>
         <p class="card-text" style="padding:0 1rem"> studente al 5° anno del liceo Margerita-Hack a Bari. Oltre all'impegno scolastico, coltivo diverse passioni che mi definiscono come persona.
       </div>
@@ -106,13 +97,7 @@
   </div>
   </div>
   <br>
-<div class="cont-triangle">
-  <div class="triangle itm1"></div>
-  <div class="triangle itm2"></div>
-  <div class="triangle itm3"></div>
-  <div class="triangle itm4"></div>
-  <div class="triangle itm5"></div>
-</div>
+
 <br><br><br>
   <div class="container-fluid conta" style="margin-top: 10rem;">
     <div class="row">
