@@ -12,7 +12,7 @@
     <title>E-Portfolio</title>
     <style>@font-face {
       font-family: 'Lilita'; /* Sostituisci con il nome che vuoi assegnare al tuo tipo di carattere */
-      src: url('../capolavoro/assets/LilitaOne-Regular.ttf') format('truetype'); /* Sostituisci il percorso al tuo file TTF */
+      src: url('../assets/LilitaOne-Regular.ttf') format('truetype'); /* Sostituisci il percorso al tuo file TTF */
       /* Aggiungi altri formati del tipo di carattere se necessario */
       font-weight: normal; /* Specifica il peso del tipo di carattere (normal, bold, etc.) */
       font-style: normal; /* Specifica lo stile del tipo di carattere (normal, italic, etc.) */
@@ -20,9 +20,59 @@
 .icon2{
   width: 25em;
 }
+.triangle {
+  --r:30px; /* border radius */
+  margin-left: -200px;
+  height: 400px;
+  aspect-ratio: cos(30deg);
+  --_g:calc(tan(60deg)*var(--r)) right var(--r),#000 98%,#0000 101%;
+  -webkit-mask:
+    conic-gradient(from 240deg at calc(200% - 3*var(--r)/2),#000 60deg,#0000 0)
+     100% 0/calc(100% - 3*var(--r)/2) 100% no-repeat,
+    radial-gradient(var(--r) at calc(2*var(--r)) 50%,#000 98%,#0000 101%),
+    radial-gradient(var(--r) at top    var(--_g)),
+    radial-gradient(var(--r) at bottom var(--_g));
+  clip-path: polygon(0 50%,100% 100%,100% 0);
+  box-shadow: 2px 6px 102px 65px rgba(79,111,161,1);
+-webkit-box-shadow: 2px 6px 102px 65px rgba(79,111,161,1);
+-moz-box-shadow: 2px 6px 102px 65px rgba(79,111,161,1);
+}
+.cont-triangle{
+  
+  display: flex; /* Dispone i triangoli in fila orizzontale */
+  flex-direction: row; 
+}
+.itm1{
+  background: linear-gradient(45deg,#95b9f0,#1b51a3);
+  transform: rotate(30deg);
+}
+.itm2{
+  margin-left: 50px;
+  background: linear-gradient(45deg,#13233b,#1b51a3);
+  transform: rotate(60deg);
+ 
+}
+.itm3{
+  margin-left: 50px;
+  background: linear-gradient(45deg,#4f6fa1,#3d80e3);
+
+  transform: rotate(90deg);
+}
+.itm4{
+  margin-left: 50px;
+  background: linear-gradient(45deg,#13233b,#043a87);
+
+  transform: rotate(120deg);
+}
+.itm5{
+  margin-left: 50px;
+  background: linear-gradient(45deg,#043a87,#4f6fa1);
+
+  transform: rotate(150deg);
+}
 </style>
   </head>
-  <body style="background-color: #fefefe; font-family:Lilita; font-weight:300;">
+  <body style="background-color: #fefefe;font-family:Lilita; font-weight:300; overflow-x: hidden; ">
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand">Giuseppe Totire</a>
@@ -50,20 +100,26 @@
     
     
     <figure  class="col-md-4 ms-auto">
-      <img src="../capolavoro/assets/blob-haikei.svg" alt="" class="icon1" id="img1"/>
+      <img src="../assets/blob-haikei.svg" alt="" class="icon1" id="img1"/>
     </figure>
 
   </div>
   </div>
-    
-
-  <div class="container-fluid conta">
+  <br><br><br><br><br><br>
+<div class="cont-triangle">
+  <div class="triangle itm1"></div>
+  <div class="triangle itm2"></div>
+  <div class="triangle itm3"></div>
+  <div class="triangle itm4"></div>
+  <div class="triangle itm5"></div>
+</div>
+  <div class="container-fluid conta" style="margin-top: 10rem;">
     <div class="row">
       <figure  class="col-md-4 ms-auto">
-        <img src="../capolavoro/assets/prev.jpg" alt="" class="icon2" id="img1"/>
+        <img src="../assets/prev.jpg" alt="" class="icon2" id="img1"/>
       </figure>
 
-  <div class="card col-md-4" style="margin:10rem; background-color: #031633; color:#fefefe;font-size:18px">
+  <div class="card col-md-4" style="margin: 5rem 10rem; background-color: #031633; color:#fefefe;font-size:18px">
     <div class="card-body">
       <h5 class="card-title">Sviluppo web: la mia passione per la tecnologia</h5>
       
@@ -74,7 +130,8 @@
   
 </div>
 </div>
-    
+
+
   </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
