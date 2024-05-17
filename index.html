@@ -12,7 +12,7 @@
     <title>E-Portfolio</title>
     <style>@font-face {
       font-family: 'Lilita'; /* Sostituisci con il nome che vuoi assegnare al tuo tipo di carattere */
-      src: url('../capolavoro/assets/LilitaOne-Regular.ttf') format('truetype'); /* Sostituisci il percorso al tuo file TTF */
+      src: url('../assets/LilitaOne-Regular.ttf') format('truetype'); /* Sostituisci il percorso al tuo file TTF */
       /* Aggiungi altri formati del tipo di carattere se necessario */
       font-weight: normal; /* Specifica il peso del tipo di carattere (normal, bold, etc.) */
       font-style: normal; /* Specifica lo stile del tipo di carattere (normal, italic, etc.) */
@@ -66,6 +66,19 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
 
   transform: rotate(150deg);
 }
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.fadeitup1{
+  animation: 2s both fadeInUp;
+}
 </style>
   </head>
   <body style="background-color: #ddd;font-family:Lilita; font-weight:300; overflow-x: hidden; ">
@@ -86,7 +99,7 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
     <div class="container-fluid conta">
       <div class="row justify-content-between">
     
-    <div class="card col-md-4 primo" style="margin:10rem 15rem; background-color: #031633; color:#ddd;font-size:22px; border-radius: 20px;">
+    <div class="card col-md-4 primo fadeitup1" style="margin:10rem 15rem; background-color: #031633; color:#ddd;font-size:22px; border-radius: 20px;">
       <div class="card-body" style="padding:2rem">
         <h3 class="card-title">Ciao! Sono Giuseppe Totire</h3>
         <h6 class="card-subtitle mb-2 text-muted">Capolavoro</h6>
@@ -95,8 +108,8 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
     </div>
     
     
-    <figure  class="col-md-4 ms-auto">
-      <img src="../capolavoro/assets/blob-haikei.svg" alt="" class="icon1" id="img1"/>
+    <figure  class="col-md-4 ms-auto fadeitright">
+      <img src="../assets/blob-haikei.svg" alt="" class="icon1" id="img1"/>
     </figure>
 
   </div>
@@ -107,10 +120,10 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
   <div class="container-fluid conta" style="margin-top: 10rem;">
     <div class="row justify-content-between">
       <figure  class="col-md-4 ms-auto figure">
-        <img src="../capolavoro/assets/sinistra.svg" alt="" class="icon2" id="img1"/>
+        <img src="../assets/sinistra.svg" alt="" class="icon2" id="img1"/>
       </figure>
 
-  <div class="card col-md-4 primo" style="margin:10rem 15rem; background-color: #031633; color:#ddd;font-size:22px; border-radius: 20px;">
+  <div class="card col-md-4 primo fadeitup" style="margin:10rem 15rem; background-color: #031633; color:#ddd;font-size:22px; border-radius: 20px;">
     <div class="card-body">
       <h3 class="card-title">Sviluppo web: la mia passione per la tecnologia</h3>
       <h6 class="card-subtitle mb-2 text-muted">Informatica</h6>
@@ -130,7 +143,23 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
       crossorigin="anonymous"
     ></script>
     <script>
-      
+     const elementsToFadeInUpOnScroll = document.querySelectorAll(".fadeitup");
+
+if (elementsToFadeInUpOnScroll) {
+  window.addEventListener("scroll", function(event) {
+    elementsToFadeInUpOnScroll.forEach(function(element) {
+      const elementRect = element.getBoundingClientRect();
+      const isElementVisible = (elementRect.top >= 0 && elementRect.top <= window.innerHeight);
+
+      if (window.scrollY >= (element.offsetTop - window.innerHeight) && isElementVisible) {
+        element.classList.add("fadeitup1");
+      } else {
+        element.classList.remove("fadeitup1");
+      }
+    });
+  });
+}
+
     </script>
   </body>
 </html>
