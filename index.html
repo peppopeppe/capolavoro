@@ -48,6 +48,12 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
   transform: rotate(60deg);
  
 }
+.highlight {
+  background-color:#031633 ; /* Adjust color as needed */
+  font-weight: bold; 
+  padding: 0 5px;/* Adjust style as needed */
+}
+
 .itm3{
   margin-left: 250px;
   background: linear-gradient(45deg,#4f6fa1,#3d80e3);
@@ -79,12 +85,49 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
 .fadeitup1{
   animation: 2s both fadeInUp;
 }
+@keyframes fadeInRight {
+  from {
+    transform: translatex(150px);
+    opacity: 0;
+  }
+  to {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
+.fadeitright1{
+  animation: 2s both fadeInRight;
+}
+@keyframes fadeInLeft {
+  from {
+    transform: translatex(-150px);
+    opacity: 0;
+  }
+  to {
+    transform: translatex(0);
+    opacity: 1;
+    
+  }
+}
+.fadeitleft1{
+  animation: 2s both fadeInLeft;
+}
+.a{
+  width:8rem ;
+  background-color:#aecffe ;
+  color: #031633;
+}
+.a:hover{
+  background-color:rgb(244,246,240);
+  color: #000;
+  transition: .8s;
+}
 </style>
   </head>
-  <body style="background-color: #ddd;font-family:Lilita; font-weight:300; overflow-x: hidden; ">
-    <nav class="navbar navbar-light bg-light">
+  <body style="background-color: #f4f6f0;font-family:Lilita; font-weight:300; overflow-x: hidden; ">
+    <nav class="navbar navbar-light sticky-top" style="background-color: #031633;">
       <div class="container-fluid">
-        <a class="navbar-brand">Giuseppe Totire</a>
+        <a class="navbar-brand" style="color:#f4f6f0">Giuseppe Totire</a>
         <form class="d-flex">
           <input
             class="form-control me-2"
@@ -96,39 +139,50 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
         </form>
       </div>
     </nav>
+    
     <div class="container-fluid conta">
       <div class="row justify-content-between">
     
-    <div class="card col-md-4 primo fadeitup1" style="margin:10rem 15rem; background-color: #031633; color:#ddd;font-size:22px; border-radius: 20px;">
+    <div class="card col-md-4 primo fadeitup1" style="margin:10rem 15rem; background-color: #0a58ca; color:#ddd;font-size:22px; border-radius: 20px;">
       <div class="card-body" style="padding:2rem">
         <h3 class="card-title">Ciao! Sono Giuseppe Totire</h3>
         <h6 class="card-subtitle mb-2 text-muted">Capolavoro</h6>
         <p class="card-text" style="padding:0 1rem">Studente al 5° anno del liceo Margerita-Hack a Bari. Oltre all'impegno scolastico, coltivo diverse passioni che mi definiscono come persona.
       </div>
+      <div class="d-flex justify-content-evenly" style="margin-bottom:2rem ;">
+        <a class="btn a" href="#sviluppoweb" role="button">Sviluppo Web</a>
+        <a class="btn a" href="#" role="button">Musica</a>
+        <a class="btn a" href="#" role="button">Sport</a>
+      </div>
+      
     </div>
+
     
     
-    <figure  class="col-md-4 ms-auto fadeitright">
+    <figure  class="col-md-4 ms-auto fadeitright1">
       <img src="../assets/blob-haikei.svg" alt="" class="icon1" id="img1"/>
     </figure>
 
   </div>
   </div>
-  <br>
-
-<br>
+  
   <div class="container-fluid conta" style="margin-top: 10rem;">
     <div class="row justify-content-between">
-      <figure  class="col-md-4 ms-auto figure">
+      <figure  class="col-md-4 ms-auto figure fadeitleft">
         <img src="../assets/sinistra.svg" alt="" class="icon2" id="img1"/>
       </figure>
 
-  <div class="card col-md-4 primo fadeitup" style="margin:10rem 15rem; background-color: #031633; color:#ddd;font-size:22px; border-radius: 20px;">
+  <div class="card col-md-4 primo fadeitup" id="sviluppoweb" style="margin:5rem 15rem; background-color: #0a58ca; color:#ddd;font-size:24px; border-radius: 20px;">
     <div class="card-body">
       <h3 class="card-title">Sviluppo web: la mia passione per la tecnologia</h3>
       <h6 class="card-subtitle mb-2 text-muted">Informatica</h6>
-      <p class="card-text" style="color: #cacaca;"> Fin da piccolo ho avuto un'inclinazione naturale per il mondo digitale. Ho iniziato a programmare da solo, creando siti web e applicazioni. Nel tempo, ho sviluppato le mie competenze, diventando un web developer freelance. Mi occupo di realizzare siti web e web app personalizzate, per clienti privati e aziende. Amo la sfida di trasformare idee in progetti digitali funzionali ed esteticamente accattivanti.
-    </div>
+      <p class="card-text" style="color: #cacaca;"> Fin da piccolo ho avuto un'inclinazione naturale per il mondo digitale. Ho iniziato a programmare da solo, creando siti web e mini-software di vario genere. Nel tempo, ho sviluppato le mie competenze, diventando un web developer freelance. Mi occupo di realizzare siti web personalizzati, per clienti privati e aziende. Aiutato dalla formazione scolastica, sono riuscito ad ampliare queste skill. 
+    
+      </div>
+      <div class="d-flex justify-content-start" style="margin-bottom:2rem;margin-left:1rem">
+        <a class="btn a" href="/certificati.html" role="button">Certificati</a>
+        
+      </div>
   </div>
   
   
@@ -144,6 +198,8 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
     ></script>
     <script>
      const elementsToFadeInUpOnScroll = document.querySelectorAll(".fadeitup");
+     const elementsToFadeInUpOnScroll1 = document.querySelectorAll(".fadeitright");
+     const elementsToFadeInUpOnScroll2 = document.querySelectorAll(".fadeitleft");
 
 if (elementsToFadeInUpOnScroll) {
   window.addEventListener("scroll", function(event) {
@@ -153,13 +209,68 @@ if (elementsToFadeInUpOnScroll) {
 
       if (window.scrollY >= (element.offsetTop - window.innerHeight) && isElementVisible) {
         element.classList.add("fadeitup1");
+        
+
       } else {
         element.classList.remove("fadeitup1");
+       
+
+      }
+    });
+    elementsToFadeInUpOnScroll1.forEach(function(element) {
+      const elementRect = element.getBoundingClientRect();
+      const isElementVisible = (elementRect.top >= 0 && elementRect.top <= window.innerHeight);
+
+      if (window.scrollY >= (element.offsetTop - window.innerHeight) && isElementVisible) {
+        
+        element.classList.add("fadeitright1");
+
+      } else {
+        
+        element.classList.remove("fadeitright1");
+
+      }
+    });
+    elementsToFadeInUpOnScroll2.forEach(function(element) {
+      const elementRect = element.getBoundingClientRect();
+      const isElementVisible = (elementRect.top >= 0 && elementRect.top <= window.innerHeight);
+
+      if (window.scrollY >= (element.offsetTop - window.innerHeight) && isElementVisible) {
+        
+        element.classList.add("fadeitleft1");
+
+      } else {
+        
+        element.classList.remove("fadeitleft1");
+
       }
     });
   });
 }
 
+
+
     </script>
+    <script> // Get the enclosing form
+      const searchInput = document.querySelector('.form-control'); // Get the search input field
+      const searchForm = searchInput.closest('form'); // Get the enclosing form
+      
+      searchForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+      
+        const searchTerm = searchInput.value.toLowerCase(); // Get the search term in lowercase
+        const searchRegExp = new RegExp(searchTerm, 'g'); // Create a regular expression
+      
+        // Get the entire document body (not just the form)
+        const documentBody = document.body;
+      
+        // Replace the search term with highlighted spans in the entire document body
+        documentBody.innerHTML = documentBody.innerHTML.replace(searchRegExp, `<span class="highlight">${searchTerm}</span>`);
+      });
+      
+
+ // Set the input value with highlighted text
+     
+      </script>
   </body>
 </html>
