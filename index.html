@@ -182,7 +182,7 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
       <h2>Studente, Sviluppatore, Musicista, Sportivo</h2>
     </div>
   </div>
-    <div class="container-fluid conta">
+    <div class="container-fluid conta" style="margin-top:3rem;">
       <div class="row justify-content-between">
     
         <div class="card col-md-4 primo fadeitup" style="align-items: center; background-color: #0a58ca; color: #ddd; font-size: 18px; border-radius: 20px; margin:6rem auto;">
@@ -316,6 +316,18 @@ if (elementsToFadeInUpOnScroll) {
  // Set the input value with highlighted text
      
       </script>
+      <script>
+        function adjustImageSize() {
+          var image = document.getElementsByClassName('icon1')[0];
+          if (image) {
+            image.style.maxWidth = '100%';
+            image.style.height = 'auto';
+          }
+        }
+        
+        window.addEventListener('load', adjustImageSize);
+        window.addEventListener('resize', adjustImageSize);
+        </script>
       <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.6/tsparticles.bundle.min.js"></script>
       <script type="text/javascript"> 
         // Check if tsParticles is available
@@ -432,5 +444,6 @@ if (elementsToFadeInUpOnScroll) {
         } else {
             console.error("tsParticles is not available");
         }</script>
+        
   </body>
 </html>
