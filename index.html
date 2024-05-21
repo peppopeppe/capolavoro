@@ -24,6 +24,17 @@
      /* Cambia il colore di sfondo se desideri */
     z-index: -1;
 }
+.homess{
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+}
+.homes{
+  color: #f4f6f0;
+  text-align: center;
+ 
+}
 body{
   background: #031633;
 }
@@ -78,6 +89,12 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
   background: linear-gradient(45deg,#13233b,#043a87);
 
   transform: rotate(120deg);
+}
+.imgprof{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 .itm5{
   margin-left: 250px;
@@ -144,7 +161,7 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
 
   <body style="font-family:Lilita; font-weight:300; overflow-x: hidden; ">
     <div id="tsparticles"></div>
-    <nav class="navbar navbar-light sticky-top" style="background-color: #031633;">
+    <nav class="navbar navbar-light sticky-top" style="background-color: #101415;">
       <div class="container-fluid">
         <a class="navbar-brand" style="color:#f4f6f0; font-size:16px;">Giuseppe Totire</a>
         <form class="d-flex">
@@ -158,11 +175,17 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
         </form>
       </div>
     </nav>
-    
+    <div class="homess">
+    <div class="homes">
+      <img src="/assets/imgprof.jpg" class="imgprof" alt="">
+      <h1>Giuseppe Totire</h1>
+      <h2>Studente, Sviluppatore, Musicista, Sportivo</h2>
+    </div>
+  </div>
     <div class="container-fluid conta">
       <div class="row justify-content-between">
     
-        <div class="card col-md-4 primo fadeitup1" style="align-items: center; background-color: #0a58ca; color: #ddd; font-size: 18px; border-radius: 20px; margin:5rem auto;">
+        <div class="card col-md-4 primo fadeitup" style="align-items: center; background-color: #0a58ca; color: #ddd; font-size: 18px; border-radius: 20px; margin:6rem auto;">
           <div class="card-body" style="padding: 2rem;">
             <h3 class="card-title">Ciao! Sono Giuseppe Totire</h3>
             <h6 class="card-subtitle mb-2 text-muted">Capolavoro</h6>
