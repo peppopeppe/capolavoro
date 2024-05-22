@@ -72,10 +72,21 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
   transform: rotate(60deg);
  
 }
+.video{
+  border-radius: 10px;
+  
+  height: 400px;
+  object-fit: cover;
+}
+.videocont{
+  
+  margin-top: 1rem;
+}
 .highlight {
   background-color:#031633 ; /* Adjust color as needed */
   font-weight: bold; 
   padding: 0 5px;/* Adjust style as needed */
+  padding-top: 1rem;
 }
 
 .itm3{
@@ -229,10 +240,47 @@ box-shadow: 0px 8px 38px 0px rgba(3, 22, 51, 1);
   
 </div>
 </div>
+<div class="container-fluid conta" style="margin-top: 10rem;">
+  <div class="row justify-content-between">
+    
+    <div class="card col-md-4 primo fadeitup" id="musica" style="margin: 5rem auto; background-color: #0a58ca; color: #ddd; font-size: 20px; border-radius: 20px;">
+     <div class="videocont"> <video src="../capolavoro/assets/0522.mp4" class="card-img-top video" alt="..." controls></video></div>
+      <div class="card-body">
+        <h3 class="card-title">Musica: la mia passione per il pianoforte</h3>
+        <h6 class="card-subtitle mb-2 text-muted">Musica</h6>
+        <p class="card-text" style="color: #cacaca;">Il pianoforte mi ha insegnato il valore della pazienza, della perseveranza e della disciplina, ma soprattutto il potere della musica di unire e trasmettere emozioni universali. Suonare il pianoforte è un'esigenza, un modo per esprimere la mia anima e connettermi con il mondo.</p>
+      </div>
+      
+    </div>
+    <figure  class="col-md-4 ms-auto fadeitright1">
+      <img src="../capolavoro/assets/blob-haikei.svg" alt="" class="icon1" id="img1"/>
+   </figure>
+
+
+
+</div>
+</div>
 
 
   </div>
-  
+  <script>const videoElement = document.querySelector('video'); // Seleziona l'elemento video
+
+    let originalObjectFit; // Variabile per memorizzare l'object-fit originale
+    
+    videoElement.addEventListener('fullscreenchange', handleFullscreenChange);
+    
+    function handleFullscreenChange() {
+      if (document.fullscreenElement) {
+        // Video in modalità schermo intero
+        originalObjectFit = videoElement.style.objectFit; // Salva l'object-fit originale
+        videoElement.style.objectFit = 'none'; // Annulla object-fit
+      } else {
+        // Video non in modalità schermo intero
+        videoElement.style.objectFit = originalObjectFit; // Ripristina l'object-fit originale
+      }
+    }
+    
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -324,8 +372,7 @@ if (elementsToFadeInUpOnScroll) {
           if (image) {
             image.style.maxWidth = '100%';
             image.style.height = 'auto';
-            image2.style.maxWidth = '100%';
-            image2.style.height = 'auto';
+          
           }
         }
         
