@@ -24,6 +24,9 @@
     .card-title {
       font-weight: bold;
     }
+    body{
+      background: #0343a3;
+    }
     body{font-family:Lilita; font-weight:300;}
     .card-text {
       font-style: italic;
@@ -32,6 +35,7 @@
   </style>
 </head>
 <body>
+  <div id="tsparticles"></div>
     <nav class="navbar navbar-light sticky-top" style="background-color: #031633;">
         <div class="container-fluid">
           <a class="navbar-brand" style="color:#f4f6f0">Giuseppe Totire</a>
@@ -47,7 +51,7 @@
         </div>
       </nav>
   <div class="container">
-    <h1>I miei certificati</h1>
+    <h1 style="color:#f4f6f0;">I miei certificati</h1>
     <div class="row" style="margin-bottom: 1rem;">
     <div class="col-md-4">
       <div class="card" style="margin-bottom: 1rem;">
@@ -196,5 +200,121 @@
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
   crossorigin="anonymous"
-></script></body>
+></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.6/tsparticles.bundle.min.js"></script>
+<script type="text/javascript"> 
+  // Check if tsParticles is available
+  if (typeof tsParticles !== 'undefined') {
+      console.log("tsParticles is available");
+
+      document.addEventListener("DOMContentLoaded", function() {
+          tsParticles.load("tsparticles", {
+              particles: {
+                  number: {
+                      value: 50,
+                      density: {
+                          enable: true,
+                          value_area: 800
+                      }
+                  },
+                  color: {
+                      value: "#ffffff" /* Cambia il colore delle particelle per vedere se sono visibili */
+                  },
+                  shape: {
+                      type: "circle",
+                      stroke: {
+                          width: 0,
+                          color: "#000000"
+                      },
+                      polygon: {
+                          nb_sides: 5
+                      }
+                  },
+                  opacity: {
+                      value: 0.5,
+                      random: false,
+                      anim: {
+                          enable: false,
+                          speed: 1,
+                          opacity_min: 0.1,
+                          sync: false
+                      }
+                  },
+                  size: {
+                      value: 3,
+                      random: true,
+                      anim: {
+                          enable: false,
+                          speed: 40,
+                          size_min: 0.1,
+                          sync: false
+                      }
+                  },
+                  line_linked: {
+                      enable: true,
+                      distance: 150,
+                      color: "#ffffff",
+                      opacity: 0.4,
+                      width: 1
+                  },
+                  move: {
+                      enable: true,
+                      speed: 3,
+                      direction: "none",
+                      random: false,
+                      straight: false,
+                      out_mode: "out",
+                      bounce: false,
+                      attract: {
+                          enable: false,
+                          rotateX: 600,
+                          rotateY: 1200
+                      }
+                  }
+              },
+              interactivity: {
+                  detect_on: "canvas",
+                  events: {
+                      onhover: {
+                          enable: true,
+                          mode: "repulse"
+                      },
+                      onclick: {
+                          enable: true,
+                          mode: "push"
+                      },
+                      resize: true
+                  },
+                  modes: {
+                      grab: {
+                          distance: 400,
+                          line_linked: {
+                              opacity: 1
+                          }
+                      },
+                      bubble: {
+                          distance: 400,
+                          size: 40,
+                          duration: 2,
+                          opacity: 8,
+                          speed: 3
+                      },
+                      repulse: {
+                          distance: 200,
+                          duration: 0.4
+                      },
+                      push: {
+                          particles_nb: 4
+                      },
+                      remove: {
+                          particles_nb: 2
+                      }
+                  }
+              },
+              retina_detect: true
+          });
+      });
+  } else {
+      console.error("tsParticles is not available");
+  }</script></body>
 </html>
